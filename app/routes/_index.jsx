@@ -1,3 +1,5 @@
+import { Link } from "@remix-run/react";
+
 import styles from "~/styles/_index.css";
 
 export const links = () => [{ rel: "stylesheet", href: styles }];
@@ -46,6 +48,12 @@ export default function Index() {
               <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
                 Remix Docs
               </a>
+            </li>
+            <li>
+              <Link to="cookie-set">Example: Set Cookie</Link>
+            </li>
+            <li>
+              <Link to="cookie-delete">Example: Delete Cookie</Link>
             </li>
           </ul>
         </div>
