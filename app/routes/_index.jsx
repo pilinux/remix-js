@@ -1,5 +1,7 @@
 import { Link } from "@remix-run/react";
 
+import useErrorHandler from "~/errors";
+
 import styles from "~/styles/_index.css";
 
 export const links = () => [{ rel: "stylesheet", href: styles }];
@@ -56,6 +58,40 @@ export default function Index() {
               <Link to="cookie-delete">Example: Delete Cookie</Link>
             </li>
           </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function ErrorBoundary() {
+  const { status, statusText, data, message, stack } = useErrorHandler();
+
+  if (status === 401) {
+    return (
+      <div className="container-sm">
+        <div className="row">
+          <div className="col">
+            <div className="error-container">
+              <p>You must be logged in.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="container-sm">
+      <div className="row">
+        <div className="col">
+          <div className="error-container">
+            Something unexpected went wrong. Sorry about that.
+            {statusText && <p>{statusText}</p>}
+            {data && <p>{data}</p>}
+            {message && <p>{message}</p>}
+            {stack && <pre>{stack}</pre>}
+          </div>
         </div>
       </div>
     </div>
