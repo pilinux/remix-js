@@ -9,7 +9,7 @@ import {
 
 import useErrorHandler from "./errors";
 
-import styles from "bootstrap/dist/css/bootstrap.min.css";
+import styles from "@tabler/core/dist/css/tabler.min.css";
 
 export const links = () => [
   {
