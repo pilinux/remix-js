@@ -57,6 +57,9 @@ export default function Index() {
             <li>
               <Link to="cookie-delete">Example: Delete Cookie</Link>
             </li>
+            <li>
+              <Link to="status">Remote API Status [GET]</Link>
+            </li>
           </ul>
         </div>
       </div>
