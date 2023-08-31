@@ -52,10 +52,10 @@ export default function Index() {
               </a>
             </li>
             <li>
-              <Link to="cookie-set">Example: Set Cookie</Link>
+              <Link to="session-set">Example: Set Session</Link>
             </li>
             <li>
-              <Link to="cookie-delete">Example: Delete Cookie</Link>
+              <Link to="session-delete">Example: Delete Session</Link>
             </li>
             <li>
               <Link to="status">Remote API Status [GET]</Link>
