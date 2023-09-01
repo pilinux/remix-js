@@ -51,6 +51,7 @@ export default function Index() {
                 Remix Docs
               </a>
             </li>
+
             <li>
               <Link to="session-set">Example: Set Session</Link>
             </li>
@@ -63,8 +64,15 @@ export default function Index() {
             <li>
               <Link to="cookie-delete">Example: Delete Cookie</Link>
             </li>
+
             <li>
               <Link to="status">Remote API Status [GET]</Link>
+            </li>
+            <li>
+              <Link to="login">Login [POST]</Link>
+            </li>
+            <li>
+              <Link to="logout">Logout [POST]</Link>
             </li>
           </ul>
         </div>
