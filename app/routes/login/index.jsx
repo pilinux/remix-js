@@ -4,21 +4,11 @@ import { Form, Link } from "@remix-run/react";
 import { useState } from "react";
 
 import { remoteApi } from "~/api.server";
-import { sha512, sha3_512 } from "~/crypto";
-import { jwtExpiry } from "~/jwt";
 import { cookieHandler } from "~/cookies.server";
 
-function validateEmail(email) {
-  const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  return regex.test(email);
-}
-
-function validatePassword(password) {
-  // ,;.:-_#'+*@<>!"§$|%&/()[]=?{}\
-  const regex =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[,;.:\-\_#\'+*@<>!"§$|%&/\(\)\[\]=?\{\}\\]).{6,}$/;
-  return regex.test(password);
-}
+import { sha512, sha3_512 } from "~/crypto";
+import { jwtExpiry } from "~/jwt";
+import { validateEmail, validatePassword } from "~/validator";
 
 // https://remix.run/docs/en/main/guides/resource-routes
 // on server-side
@@ -174,7 +164,7 @@ export default function Login() {
 
       if (res.status === 200) {
         // authentication successful, perform client-side redirect
-        window.location.href = "/logout";
+        window.location.href = "/protected";
       }
       if (res.status !== 200 && res.status < 500) {
         setAuthError("Invalid email or password");
