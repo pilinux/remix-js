@@ -1,3 +1,41 @@
+# Remix JS
+
+Build modern web apps using Remix and built-in browser APIs without relying too much on deprecated
+dependencies.
+
+## About this Repository
+
+This repository serves as a comprehensive guide to building *Backend for Frontend (BFF)* web
+applications using Remix, to help create high-performance and maintainable apps. It will cover
+a wide range of topics, from project setup and routing to data fetching, authentication, and
+deployment.
+
+## Walkthrough
+
+- Home: `app/routes/_index.jsx`
+- Set Session: `app/routes/session-set.jsx`
+- Delete Session: `app/routes/session-delete.jsx`
+- Set Cookie: `app/routes/cookie-set.jsx`
+- Delete Cookie: `app/routes/cookie-delete.jsx`
+- Remote API Status [HTTP GET]: `app/routes/status/index.jsx`
+- Login [HTTP POST]: `app/routes/login/index.jsx`
+- Logout [HTTP POST]: `app/routes/logout/index.jsx`
+- Test JWT [HTTP GET]: `app/routes/protected/index.jsx`
+
+### Note
+
+- Password handling in this repo code: `user pass` -> `sha2 (client-side)` ->
+  `sha3 (remix server-side)` -> `argon2id (in the database)`
+
+### Demo App
+
+Link: [remixjs.pilinux.me](https://remixjs.pilinux.me)
+
+### Demo User for Testing Auth
+
+- Email: `apidev-no-reply@pilinux.me`
+- Password: `1234.Abc!`
+
 # Welcome to Remix!
 
 - [Remix Docs](https://remix.run/docs)
