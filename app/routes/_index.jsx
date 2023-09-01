@@ -74,6 +74,9 @@ export default function Index() {
             <li>
               <Link to="logout">Logout [POST]</Link>
             </li>
+            <li>
+              <Link to="protected">Test JWT [GET]</Link>
+            </li>
           </ul>
         </div>
       </div>
